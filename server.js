@@ -8,7 +8,7 @@ const htmlRoute = require('./Routes/htmlRoutes/index');
 // These set up the base code for the app
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "Develop/public")));
+app.use(express.static(path.join(__dirname, "/public")));
 // This displays the back-end information
 app.use("/api", apiRoute);
 // This displays the front-end information
