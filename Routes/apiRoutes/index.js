@@ -7,7 +7,7 @@ const abc = require('../../')
 
 // GET method to display notes stored in db
 router.get("/notes", (req, res) => {
-    fs.readFile("../../db/db.json", "utf8", function (err, data) {
+    fs.readFile("./db/db.json", "utf8", function (err, data) {
         let noteData = [];
         if (err) {
             throw err;
@@ -26,7 +26,7 @@ router.post("/notes", (req, res) => {
 
     console.log(newNote)
 
-    fs.readFile("../../db/db.json", "utf8", (err, data) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
             console.log(`err at the database ${err}`);
         } else {
@@ -39,13 +39,13 @@ router.post("/notes", (req, res) => {
             newNote.id = v4().substring(0, 4);
             obj.push(newNote);
             
-            fs.writeFile("../../db/db.json", JSON.stringify(obj), "utf8", (err) => {
+            fs.writeFile("./db/db.json", JSON.stringify(obj), "utf8", (err) => {
                 if (err) {
                     throw err;
                 }
                 console.log("Note saved.");
                 
-                fs.readFile("../../db/db.json", "utf8", function (err, data) {
+                fs.readFile("./db/db.json", "utf8", function (err, data) {
                     let noteData = [];
                     if (err) {
                         throw err;
@@ -64,7 +64,7 @@ router.post("/notes", (req, res) => {
 });
 // DELETE method to delete notes stored in db
 router.delete("/notes/:id", (req, res) => {
-    fs.readFile("../../db/db.json", "utf8", (err, data) => {
+    fs.readFile("./db/db.json", "utf8", (err, data) => {
         if (err) {
             throw err;
         }
@@ -73,7 +73,7 @@ router.delete("/notes/:id", (req, res) => {
         const deleteThis = objNew.findIndex((note) => note.id === req.params.id);
         objNew.splice(deleteThis, 1);
 
-        const output = fs.writeFile("../../db/db.json", JSON.stringify(objNew), (err) => {
+        const output = fs.writeFile("./db/db.json", JSON.stringify(objNew), (err) => {
             if (err) {
                 throw err;
             }
