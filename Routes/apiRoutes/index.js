@@ -3,13 +3,13 @@ const fs = require('fs');
 const { v4 } =require('uuid');
 const router = require('express').Router();
 
-const abc = require('../../Develop/db/db.json')
+const abc = require('../../db/db.json')
 
 // GET method to display notes stored in db
 router.get("/notes", (req, res) => {
     fs.readFile("./db/db.json", "utf8", function (err, data) {
-        let noteData = JSON.parse(data);
-        res.json(noteData.notes);
+        let noteData = [];
+        // res.json(noteData.notes);
         if (err) {
             console.error(err)
             return
@@ -69,8 +69,8 @@ router.delete("/notes/:id", (req, res) => {
         }
         let objNew = JSON.parse(data);
 
-        const deleteThis = objNew.findIndex((note) => note.id === req.params.id);
-        objNew.splice(deleteThis, 1);
+        const deleteThis = objNew.notes.findIndex((note) => note.id === req.params.id);
+        objNew.notes.splice(deleteThis, 1);
 
         const output = fs.writeFile("./db/db.json", JSON.stringify(objNew), (err) => {
             if (err) {

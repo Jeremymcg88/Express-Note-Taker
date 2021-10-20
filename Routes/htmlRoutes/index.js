@@ -2,11 +2,11 @@ const path = require('path');
 
 const router = require('express').Router();
 
-// These create routes for when API is called
+// npm satThese create routes for when API is called
 // This displays main page
-// router.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../../public/index.html"));
-// });
+router.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../../public/index.html"));
+});
 // This displays note taking page
 router.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/notes.html"));
