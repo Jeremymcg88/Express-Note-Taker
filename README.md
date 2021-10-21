@@ -58,4 +58,4 @@ If you have any questions about the repo, open an issue or contact me directly a
 
 ## Repository
 
-[ github ]
+[ https://github.com/Jeremymcg88/Express-Note-Taker ]
