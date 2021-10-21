@@ -4,7 +4,7 @@
 
 ## Description
 
-[ Fill in blank here ]
+[ Note taking application that can write, save, and delete notes. This application incorporates Express.js. The information is then saved and returned with JSON]
 
 
 ## Table of Contents
@@ -29,7 +29,7 @@
 
 To install necessary dependencies, run the following command:
 
-[ fill in ]
+[ npm i express ]
 
 
 ## Usage
@@ -54,7 +54,7 @@ If you have any questions about the repo, open an issue or contact me directly a
 
 ## Walkthrough-Video
 
-[ video link ]
+[ https://watch.screencastify.com/v/h6viFBsmuXFPWClayjEC ]
 
 ## Repository
 
