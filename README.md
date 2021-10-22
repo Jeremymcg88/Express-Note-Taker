@@ -56,6 +56,10 @@ If you have any questions about the repo, open an issue or contact me directly a
 
 [ https://watch.screencastify.com/v/h6viFBsmuXFPWClayjEC ]
 
+## Deployed
+
+[ https://shrouded-peak-19398.herokuapp.com/ ]
+
 ## Repository
 
 [ https://github.com/Jeremymcg88/Express-Note-Taker ]
